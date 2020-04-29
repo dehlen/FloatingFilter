@@ -41,18 +41,18 @@ extension NSTableView: ArrowKeyableTextFieldDelegate {
     }
 
     func arrowKeyableTextFieldExpandSelectionToFirst(_ textField: ArrowKeyableTextField) {
-        selectRowIndexes([0], byExtendingSelection: true)
+        selectRowIndexes([0], byExtendingSelection: false)
     }
 
     func arrowKeyableTextFieldExpandSelectionToLast(_ textField: ArrowKeyableTextField) {
-        selectRowIndexes([lastRowIndex], byExtendingSelection: true)
+        selectRowIndexes([lastRowIndex], byExtendingSelection: false)
     }
 
     func arrowKeyableTextFieldExpandSelectionToPrevious(_ textField: ArrowKeyableTextField) {
-        selectRowIndex(max(0, minSelectedRowIndex - 1), byExtendingSelection: true)
+        selectRowIndex(max(0, minSelectedRowIndex - 1), byExtendingSelection: false)
     }
 
     func arrowKeyableTextFieldExpandSelectionToNext(_ textField: ArrowKeyableTextField) {
-        selectRowIndex(min(lastRowIndex, maxSelectedRowIndex + 1), byExtendingSelection: true)
+        selectRowIndex(min(lastRowIndex, maxSelectedRowIndex + 1), byExtendingSelection: false)
     }
 }
